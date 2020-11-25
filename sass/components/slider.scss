@@ -1,0 +1,55 @@
+.slider-container {
+  position: relative;
+  padding: 4rem 0;
+
+  .slider-image {
+    img {
+      height: 40rem;
+      width: 40rem;
+      object-fit: cover;
+      border: 4px solid #eff30b;
+      padding: 4rem;
+      transition: 0.3s;
+
+      @media (max-width: 810px) {
+        padding: 0;
+      }
+
+      &:hover {
+        padding: 0rem;
+      }
+    }
+  }
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    background-color: transparent;
+    border: none;
+    padding: 1rem 1rem;
+    z-index: 1;
+    outline: none;
+    cursor: pointer;
+
+    @media (max-width: 450px) {
+      &.next {
+        right: 2rem !important;
+      }
+      &.prev {
+        left: 2rem !important;
+      }
+    }
+
+    &.next {
+      right: 5rem;
+    }
+    &.prev {
+      left: 5rem;
+    }
+
+    i {
+      font-size: 3.5rem;
+      color: white;
+    }
+  }
+}

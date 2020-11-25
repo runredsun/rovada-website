@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 20rem 2rem 20rem;
+  z-index: 9999;
+  transition: 0.5s;
+
+  @media (max-width: 75em) {
+    padding: 2rem 10rem 2rem 10rem;
+  }
+  @media (max-width: 500px) {
+    padding: 2rem 10rem 2rem 5rem;
+  }
+
+  & .logo {
+    img {
+      width: 100px;
+    }
+  }
+}

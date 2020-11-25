@@ -1,0 +1,140 @@
+.nav-toggle {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  z-index: 999;
+  @media (max-width: 500px) {
+    margin-right: -5rem;
+  }
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+
+    &:nth-child(2) {
+      margin: 0.6rem 0;
+    }
+
+    transition: transform 0.3s;
+  }
+
+  @include respond(tab) {
+    display: flex;
+  }
+}
+
+.nav {
+  display: flex;
+
+  @include respond(tab) {
+    transition: all 0.4s;
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    // transform
+    opacity: 0;
+  }
+
+  .nav-list {
+    display: flex;
+    @include respond(tab) {
+      background-color: #505050;
+      justify-self: flex-start;
+      width: 70%;
+      flex-direction: column;
+      padding: 10rem 2rem;
+      justify-content: flex-start;
+      text-align: center;
+      transition: all 0.6s;
+
+      // transform
+      transform: translateX(-100%);
+    }
+
+    .inst {
+      display: none;
+      border-radius: 10px;
+    }
+
+    @include respond(tab) {
+      .inst {
+        display: block;
+        background-color: white;
+
+        img {
+          max-height: 5rem;
+          width: 5rem;
+        }
+      }
+    }
+
+    .nav-item {
+      align-self: center;
+
+      @include respond(tab) {
+        margin-bottom: 3rem;
+      }
+
+      &:not(:last-child) {
+        margin-right: 4rem;
+
+        @include respond(tab-port) {
+          margin-right: 1.5rem;
+        }
+      }
+
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.6rem;
+        padding: 1rem;
+        border-radius: 100px;
+        transition: all 0.3s;
+        outline: none;
+        transition: 0.5s;
+        @include respond(tab) {
+          font-size: 2.5rem;
+        }
+
+        &:hover {
+          background-color: #eff30b;
+          box-shadow: 1px 2px 32px 0px rgba(239, 243, 11, 1);
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.animated {
+  animation: navAnim 0.3s forwards;
+}
+
+.toglled {
+  .line {
+    &:first-child {
+      transform: rotate(45deg) translateX(6px);
+    }
+    &:last-child {
+      visibility: hidden;
+    }
+    &:nth-child(2) {
+      transform: rotate(-45deg) translateX(6px);
+    }
+  }
+}

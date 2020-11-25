@@ -1,0 +1,39 @@
+.footer {
+  padding: 5rem 0;
+  background-image: url('../images/bg-price.png');
+  background-color: #505050;
+  color: #fff;
+  border-top: 1px solid #a7a7a7;
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.block {
+  li {
+    margin: 0.5rem;
+    font-size: 1.4rem;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  &-socials {
+    a {
+      background-color: white;
+    }
+    img {
+      max-height: 5rem;
+      width: 5rem;
+    }
+  }
+}
+
+.data {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+}

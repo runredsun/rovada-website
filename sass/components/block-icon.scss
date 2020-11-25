@@ -1,0 +1,39 @@
+.block-icon {
+  height: 9rem;
+  width: 9rem;
+  border: 8px solid #eff30b;
+  border-top: none;
+  border-left: none;
+  position: relative;
+
+  .num {
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+
+  &::before {
+    content: '';
+    height: 8px;
+    background-color: #eff30b;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+  }
+  &::after {
+    content: '';
+    height: 5rem;
+    background-color: #eff30b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8px;
+  }
+  img {
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    bottom: -2.5rem;
+    right: -1rem;
+  }
+}

@@ -1,0 +1,258 @@
+@import 'abstracts/mixins.scss';
+@import 'abstracts/vars.scss';
+@import 'abstracts/animations.scss';
+
+@import 'components/slider.scss';
+@import 'components/buttons.scss';
+@import 'components/testimonials.scss';
+@import 'components/block-icon.scss';
+@import 'components/socials.scss';
+
+@import 'layout/footer.scss';
+@import 'layout/navigation.scss';
+@import 'layout/header.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  @include respond(tab-land) {
+    font-size: 55.5%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 55.5%;
+  }
+
+  @include respond(ipad) {
+    font-size: 100%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 120%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-hero {
+  background-image: url('../images/hero.jpg');
+  background-position: center left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 85vh;
+  padding-top: 15rem;
+  padding-left: 10rem;
+
+  @media (max-width: 500px) {
+    padding-top: 15rem;
+    padding-left: 5rem;
+  }
+
+  & .title {
+    line-height: 1.4;
+    font-weight: normal;
+    color: white;
+    font-size: 5.5rem;
+    max-width: 40rem;
+    animation: titleMove 1s;
+  }
+
+  & .btn {
+    animation: buttonMove 1s ease-out;
+  }
+}
+
+.section-info {
+  padding: 7rem 10rem;
+  display: flex;
+
+  @media (max-width: 500px) {
+    padding: 5rem;
+  }
+
+  .info {
+    flex: 1;
+    & .title {
+      font-size: 4rem;
+      font-weight: 100;
+    }
+
+    & .info-block {
+      padding: 1.5rem 2rem;
+
+      & .text {
+        font-size: 2rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .gallery {
+    flex: 1;
+
+    @media (max-width: 730px) {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .composition {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .image {
+          position: relative !important;
+
+          &-1 {
+            bottom: 0 !important;
+            right: 0 !important;
+          }
+          &-3 {
+            bottom: 0 !important;
+          }
+        }
+      }
+    }
+
+    .composition {
+      position: relative;
+      height: 100%;
+      padding-left: 7rem;
+
+      & .image {
+        position: absolute;
+        width: 70%;
+        box-shadow: 0 0.9rem 2.5rem rgba(0, 0, 0, 0.4);
+        transition: all 0.3s;
+        border-radius: 2px;
+        outline-offset: 1.25rem;
+
+        @media (max-width: 1060px) {
+          width: 80%;
+        }
+        @media (max-width: 950px) {
+          width: 100%;
+        }
+
+        &:hover {
+          outline: 0.9rem solid #eff30b;
+          transform: scale(1.05) translateY(-0.5rem);
+          box-shadow: 0 1.9rem 3.5rem rgba(0, 0, 0, 0.6);
+          z-index: 20;
+        }
+
+        &-1 {
+          z-index: 1;
+          bottom: 34%;
+          right: -10%;
+        }
+        &-3 {
+          bottom: 6%;
+        }
+      }
+    }
+  }
+}
+
+.section-slider {
+  background-image: url('../images/bg-price.png');
+  background-color: #505050;
+  color: #fff;
+
+  .text {
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    color: white;
+    margin-left: 10rem;
+    padding-top: 10rem;
+
+    @media (max-width: 950px) {
+      margin-left: 3rem;
+    }
+
+    @media (max-width: 650px) {
+      flex-direction: column;
+      .subtitle {
+        margin-top: 3rem;
+        max-width: 45rem;
+      }
+    }
+    .title {
+      font-weight: 200;
+      font-size: 5rem;
+    }
+    .subtitle {
+      @media (max-width: 950px) {
+        margin-left: 5rem;
+      }
+
+      @media (max-width: 430px) {
+        margin-left: 0;
+      }
+
+      margin-left: 20rem;
+      font-weight: 200;
+      font-size: 1.8rem;
+      flex: 1;
+    }
+  }
+}
+
+.section-contact {
+  background-image: url('../images/bg-price.png');
+  background-color: #505050;
+  color: #fff;
+  text-align: center;
+  padding-top: 15rem;
+  padding-bottom: 3rem;
+
+  .title {
+    font-size: 3rem;
+    max-width: 70rem;
+    margin: 0 auto;
+
+    @media (max-width: 460px) {
+      max-width: 46rem;
+    }
+  }
+
+  header {
+    margin: 0 0 2rem 0;
+    h2 {
+      font-size: 3rem;
+    }
+  }
+}
